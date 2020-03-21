@@ -23,6 +23,16 @@
     text-decoration: none;
 }
 
+#login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    height: 1rem;
+    margin: .5rem;
+}
+
 /* #header-logo {
     position: relative;
     margin-left: 5rem;
