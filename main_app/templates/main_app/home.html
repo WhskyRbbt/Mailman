@@ -1,24 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
-    <title>Mailman</title>
-</head>
-<body>
-    <header>
-        <div id="headerContent">
-            <img id="headerLogo" src="/static/images/logored.png">
-            <a class="headerItem" id="logout">Logout</a>
-            <a class="headerItem">Profile</a>
-            <a class="headerItem">Home</a>
-        </div>
-        <div id="headerUnderline"></div>
-    </header>
-    <main>
+{% extends 'base.html' %}
+{% block content %}
 
-    </main>
-</body>
-</html>
+<h1>Home</h1>
+
+{% endblock %}

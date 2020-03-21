@@ -1,17 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}{% endblock %}</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+    <title>Mailman</title>
 </head>
-<body>
-    <a href="{% url 'home' %}">Home</a> / 
-    <a href="{% url 'login' %}">Log In</a>
 
-    <hr>
+<body>
+    <header>
+        <nav>
+            <div class="nav-wrapper">
+                <ul>
+                    <li><a href="/" class="left" id="header-logo"><img src="../static/images/logored.png" alt="Mailman Logo"></a></li>
+                </ul>
+                <ul class="nav right">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="">Profile</a></li>
+                    <li><a href="">Logout</a></li>
+                </ul>
+            </div>
+            <hr />
+        </nav>
+    </header>
+    <main>
     {% block content %}
     {% endblock %}
-    
+    </main>
 </body>
+
 </html>
