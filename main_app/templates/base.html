@@ -14,12 +14,13 @@
         <nav>
             <div class="nav-wrapper">
                 <ul>
-                    <li><a href="/" class="left" id="header-logo"><img src="../static/images/logored.png" alt="Mailman Logo"></a></li>
+                    <li><a href="{% url 'home' %}" class="left" id="header-logo"><img src="../static/images/logored.png"
+                                alt="Mailman Logo"></a></li>
                 </ul>
                 <ul class="nav right">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="">Profile</a></li>
-                    <li><a href="">Logout</a></li>
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'profile' %}">Profile</a></li>
+                    <li><a href="/">Logout</a></li>
                 </ul>
             </div>
             <hr />
