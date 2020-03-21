@@ -1,4 +1,6 @@
-
+body {
+    background-color: #8f3032;
+}
 
 #landingDiv {
     display: flex;
