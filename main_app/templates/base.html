@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
     <title>Mailman</title>
 </head>
 
@@ -14,7 +14,7 @@
         <nav>
             <div class="nav-wrapper">
                 <ul>
-                    <li><a href="/" class="left logo"><img src="../static/images/logored.png" alt="Mailman Logo"></a></li>
+                    <li><a href="/" class="left" id="header-logo"><img src="../static/images/logored.png" alt="Mailman Logo"></a></li>
                 </ul>
                 <ul class="nav right">
                     <li><a href="/">Home</a></li>
@@ -24,11 +24,10 @@
             </div>
             <hr />
         </nav>
-
-        <div id="headerUnderline"></div>
     </header>
     <main>
-
+    {% block content %}
+    {% endblock %}
     </main>
 </body>
 
