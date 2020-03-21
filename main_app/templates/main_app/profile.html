@@ -1,9 +1,16 @@
 {% extends 'base.html' %}
 {% block content %}
-
-<h1>Profile</h1>
-<h1>{{user.username}} - shows</h1>
-<h1>{{user.email_address}} - shows</h1>
-<h1>{{user.first_name}} - shows</h1>
-
+<h1 class="heading">PROFILE</h1>
+<div class="profile-page">
+    <div class="profile-wrapper">
+        <div class="profile-container">
+            HJ
+        </div>
+        <div class="profile-info">
+            <h1>{{user.first_name}}&nbsp;{{user.last_name}}</h1>
+            <h3>@{{user.username}}</h3>
+        </div>
+    </div>
+    <hr />
+</div>
 {% endblock %}
