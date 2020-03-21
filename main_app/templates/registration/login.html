@@ -3,17 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="../../static/css/style.css">
+    <title>Welcome to Mailman</title>
 </head>
 <body>
-    <h1>Log-in</h1>
-
+    {% block content %}
+    <div id="landing-div">
+        <img id="landing-logo" src="../../static/images/logoredfull.png"></img>
     <!-- Add the login form -->
-    <form method="post" action="{% url 'login' %}">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" class="btn" value="login">
-        <input type="hidden" name="next" value="{{ next }}">
-    </form>
+        <form method="post" action="{% url 'login' %}">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" class="btn" value="login">
+            <input type="hidden" name="next" value="{{ next }}">
+        </form>
+        <!-- <button id="landing-button"><a href="#">Login &nbsp; &rsaquo;</a></button> -->
+        <p>Not Registered? <a href="">Sign Up</a></p>
+    </div>
+    {% endblock %}
 </body>
 </html>
