@@ -4,13 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
-    <title>Mailman</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+    <title>Welcome to Mailman</title>
 </head>
 <body>
-    <div id="landingDiv">
-        <img id="landingLogo" src="/static/images/logoredfull.png">
-        <button><a>Login with google &nbsp; &rsaquo;</a></button>
+    {% block content %}
+    <div id="landing-div">
+        <img id="landing-logo" src="../static/images/logoredfull.png">
+        <form method="post" action="{% url 'login' %}">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" class="btn" value="login">
+            <input type="hidden" name="next" value="{{ next }}">
+        </form>
+        <!-- <button id="landing-button"><a href="#">Login &nbsp; &rsaquo;</a></button> -->
+        <p>Not Registered? <a href="">Sign Up</a></p>
     </div>
+    {% endblock %}
 </body>
 </html>
