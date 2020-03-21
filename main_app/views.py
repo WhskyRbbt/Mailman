@@ -8,7 +8,6 @@ def login(request):
     return render(request, 'registration/login.html')
 
 def signup(request):
-    print("made it`")
     return render(request, 'registration/signup.html')
 
 def home(request):
