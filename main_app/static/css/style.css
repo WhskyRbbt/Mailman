@@ -2,13 +2,13 @@ body {
     /* background-color: #8f3032; */
 }
 
-#landingDiv {
+#landing-div {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-#landingLogo {
+#landing-logo {
     width: 46vw;
 }
 
@@ -30,7 +30,7 @@ button {
     width: 12rem;
 } */
 
-.headerItem {
+.header-itemtem {
     font-size: 1.3rem;
     margin-right: 3rem;
     position: relative;
