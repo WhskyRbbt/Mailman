@@ -42,44 +42,32 @@ input {
     text-align: center;
 }
 
-/* #header-logo {
-    position: relative;
-    margin-left: 5rem;
-    margin-top: .5rem;
-    margin-bottom: .5rem;
-    width: 12rem;
-} */
-
-/* .header-itemtem {
-    font-size: 1.3rem;
-    margin-right: 3rem;
-    position: relative;
-    margin-top: 1rem;
-    float: right;
-}
-
-#logout {
-    margin-right: 5rem;
-} */
-
 .nav-wrapper {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    /* border: 2px solid goldenrod; */
     padding: 2rem;
+ 
+    margin: 0px;
 }
 
-.left {
-    /* border: 2px solid red; */
+a:link, a:visited {
+    text-decoration: none;
+    color: #8f3032;
 }
+
+/* .left {
+    border: 2px solid red;
+} */
 
 .right {
     display: flex;
     justify-content: space-evenly;
-    /* border: 2px solid purple; */
     width: 400px;
     align-items: flex-end;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    font-weight: 300;
 }
 
 ul {
@@ -90,7 +78,11 @@ ul {
     border-top: 4px solid #8f3032;
 }
 
-/* PROFILE */
+.hr-body {
+    border-top: 2px solid black;
+}
+
+/* PROFILE PAGE*/
 .profile-page {
     margin: 0 auto;
     width: 800px;
@@ -98,22 +90,135 @@ ul {
 
 .profile-wrapper {
     display: flex;
-    /* border: 2px solid yellowgreen; */
     padding: 0px 5rem;
 }
 
-.profile-container {
+.circle-container {
     align-self: center;
-    background-color: #8f3032;
     color: white;
     border: 1px solid black;
     border-radius: 50%;
-    padding: .8rem;
-    font-size: 40px;
-    font-weight: 900;
-    margin: 1.5rem;
 }
 
-/* .profile-info {
-    border: 2px solid orange;
-} */
+.circle-container.top {
+    background-color: #8f3032;
+    margin: 1.5rem;
+    font-size: 40px;
+    font-weight: 900;
+    padding: .8rem;
+}
+
+.circle-container.body1 {
+    background-color: rgb(46, 110, 40);
+    font-size: 30px;
+    font-weight: 600;
+    border: 2.2px solid black;
+    width: 40%;
+    padding: .2rem;
+    /* margin-right: -2rem; */
+}
+
+.circle-container.body2 {
+    background-color: #8f3032;
+    font-size: 30px;
+    font-weight: 600;
+    border: 2.2px solid black;
+    width: 40%;
+    padding: .2rem;
+    /* margin-left: -2rem; */
+}
+.profile-info {
+    color: #8f3032;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#profile-name {
+    margin-bottom: 0px;
+}
+
+#profile-un {
+    margin-top: 0px;
+    font-weight: 100;
+}
+
+.my-shipments {
+    display: flex;
+}
+
+.section-1 {
+    flex-grow: 1;
+    text-align: center;
+}
+.section-2 {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: baseline;
+}
+.section-3 {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+    align-content: center;
+    width: 115px;
+}
+
+.sec-1.st {
+    text-decoration: underline;
+}
+
+.sec-1.un {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.cities {
+    display: flex;
+    flex-direction: column;
+    margin: .5rem 0px;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    margin: 1rem -.5rem;
+}
+
+.city {
+    margin-top: .5rem;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+.dots {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.distance {
+    font-size: 12px;
+    margin: .2rem;
+    color: #8f3032;
+}
+
+.package-button {
+    border: 2px solid #8f3032;
+    border-radius: 10px;
+    padding: .2rem .8rem;
+}
+
+.package-button.edit {
+    align-self: center;
+}
+.package-button.delete {
+    align-self: center;
+}
+
+.no-result {
+    text-align: center;
+}
