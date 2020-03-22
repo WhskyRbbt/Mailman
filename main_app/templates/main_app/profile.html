@@ -1,8 +1,112 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Profile</h1>
-<h1>{{user.username}} - shows</h1>
-<h1>{{user.first_name}} - shows</h1>
+<!-- profile header -->
+<h1 class="heading">PROFILE</h1>
+<div class="profile-page">
+    <div class="profile-wrapper">
+        <div class="circle-container top">
+            HJ
+        </div>
+        <div class="profile-info">
+            <h2 id="profile-name">{{user.first_name}}&nbsp;{{user.last_name}}</h2>
+            <h3 id="profile-un">@{{user.username}}</h3>
+        </div>
+    </div>
+    <hr class="hr-body"/>
+
+    <!-- my shipments block -->
+    <h2 class="heading">MY SHIPMENTS</h2>
+    <div class="my-shipments">
+        <div class="section-1">
+            <h5 class="sec-1 st">SHIPPING TO</h5>
+            <h4 class="sec-1 un">USERNAME</h4> <!-- Shipping Name -->
+        </div>
+        <div class="section-2">
+            <div class="cities">
+                <div class="circle-container body1">
+                    <!-- city first letter -->
+                    T
+                </div>
+                <div class="city">
+                    <!-- city -->
+                    TEMECULA
+                </div>
+            </div>
+
+            <div class="dots">● &nbsp; ● &nbsp; ● &nbsp; ●</div>
+                    <!-- distance -->
+            <div class="distance"> <h2>125 mi</h2> </div>
+
+            <div class="dots">● &nbsp; ● &nbsp; ● &nbsp; ●</div>
+
+            <div class="cities">
+                <div class="circle-container body2">
+                    <!-- city first letter -->
+                    S
+                </div>
+                <div class="city">
+                    <!-- city -->
+                    SAN DIEGO
+                </div>
+            </div>
+        </div>
+        <div class="section-3">
+            <a class="package-button edit"href="">EDIT</a>
+            <a class="package-button delete"href="">DELETE</a>
+        </div>
+    </div>
+    <div class="no-result"><h4>THERE ARE NO SHIPMENTS</h4></div>
+    <hr class="hr-body">
+    
+        <!-- my delivery block -->
+    
+        <h2 class="heading">MY DELIVERY</h2>
+        <div class="my-shipments">
+            <div class="section-1">
+                <h5 class="sec-1 st">SHIPPING FROM</h5>
+                <h4 class="sec-1 un">USERNAME</h4> <!-- Shipping Name -->
+            </div>
+            <div class="section-2">
+                <div class="cities">
+                    <div class="circle-container body1">
+                    <!-- city first letter -->
+                        T
+                    </div>
+                    <div class="city">
+                    <!-- city -->
+                        TEMECULA
+                    </div>
+                </div>
+            
+                <div class="dots">● &nbsp; ● &nbsp; ● &nbsp; ●</div>
+                <!-- distance -->
+                <div class="distance">
+                    <h2>125 mi</h2>
+                </div>
+            
+                <div class="dots">● &nbsp; ● &nbsp; ● &nbsp; ●</div>
+            
+                <div class="cities">
+                    <div class="circle-container body2">
+                        <!-- city first letter -->
+                        S
+                    </div>
+                    <div class="city">
+                        <!-- city -->
+                        SAN DIEGO
+                    </div>
+                </div>
+            </div>
+            <div class="section-3">
+                <a class="package-button delete" href="">DELIVERED</a>
+            </div>
+        </div>
+        <div class="no-result">
+            <h4>THERE ARE NO DELIVERY</h4>
+        </div>
+    </div>
+</div>
+
 
 {% endblock %}
