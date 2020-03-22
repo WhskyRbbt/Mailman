@@ -223,3 +223,7 @@ ul {
 .no-result {
     text-align: center;
 }
+
+.shipment-input {
+    display: inline;
+}

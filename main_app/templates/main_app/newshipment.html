@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Create Shipment</h1>
+<form method="POST" action="{% url 'create_shipment' %}">
+    <label> origination adress:
+        <input type="text" value="" class="shipment-input">
+    </label>
+    <label> destination adresss:
+        <input type="text" value="" class="shipment-input">
+    </label>
+    <label> dimensions:
+        length <input type="number" class="shipment-input">
+        width <input type="number" class="shipment-input">
+        height <input type="number" class="shipment-input">
+    </label>
+    <label>weight:
+        <input type="number" class="shipment-input">
+    </label>
+    <label>fragile?
+        <input type="checkbox" class="shipment-input">
+    </label>
+    <input type="submit" value="Create">
+</form>
+
+{% endblock %}
