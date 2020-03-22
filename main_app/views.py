@@ -7,8 +7,11 @@ def landing(request):
 def login(request):
     return render(request, '../templates/registration/login.html')
 
-def signup(request):
+def show_signup(request):
     return render(request, 'registration/signup.html')
+
+def signup(request):
+    print("made it")
 
 def home(request):
     return render(request, 'main_app/home.html')
