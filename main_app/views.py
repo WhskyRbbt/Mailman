@@ -5,7 +5,7 @@ def landing(request):
     return render(request, 'landing.html')
 
 def login(request):
-    return render(request, 'registration/login.html')
+    return render(request, '../templates/registration/login.html')
 
 def signup(request):
     return render(request, 'registration/signup.html')
