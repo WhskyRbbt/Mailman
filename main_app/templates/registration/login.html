@@ -11,15 +11,15 @@
     {% block content %}
     <div id="landing-div">
         <img id="landing-logo" src="../../static/images/logoredfull.png"></img>
-    <!-- Add the login form -->
-        <form method="post" action="{% url 'login' %}">
+        <form method="POST" action="{% url 'login' %}">
             {% csrf_token %}
             {{ form.as_p }}
-            <input type="submit" class="btn" value="login">
+            <input id="landing-button" type="submit" class="btn" value="log-in">
             <input type="hidden" name="next" value="{{ next }}">
         </form>
-        <!-- <button id="landing-button"><a href="#">Login &nbsp; &rsaquo;</a></button> -->
-        <p>Not Registered? <a href="">Sign Up</a></p>
+        <form method="GET" action="{% url 'show_signup' %}">
+            <p>Not Registered? <input type="submit" value="sign-up"></p>
+        </form>
     </div>
     {% endblock %}
 </body>

@@ -6,13 +6,11 @@
     <title>Document</title>
 </head>
 <body>
-    <h1 class="heading">SIGN-UP</h1>
-
-    <!-- Add the login form -->
-    <form method="post" action="{% url 'login' %}">
+    <h1>Sign-up</h1>
+    <form method="POST" action="{% url 'signup' %}">
         {% csrf_token %}
         {{ form.as_p }}
-        <input type="submit" class="btn" value="login">
+        <input type="submit" class="btn" value="create account">
         <input type="hidden" name="next" value="{{ next }}">
     </form>
 </body>
