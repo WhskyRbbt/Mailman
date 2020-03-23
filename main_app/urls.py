@@ -10,4 +10,5 @@ urlpatterns = [
     path("signup", views.signup, name="signup"),
     path("home/", views.home, name="home"),
     path("profile/", views.profile, name="profile"),
+    path("package/<int:pkg_id", views.package_detail, name="package_detail")
 ]
