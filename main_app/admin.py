@@ -6,6 +6,13 @@ from .models import User, Package
 admin.site.register(User)
 admin.site.register(Package)
 
+admin.site.unregister(User)
+admin.site.unregister(Package)
+
+
+@admin.register(User)
+class LocationAdmin(OSMGeoAdmin):
+    display = ('origination')
 @admin.register(Package)
-class pkgAdmin(OSMGeoAdmin):
-    list_display = ('name', 'location')
+class LocationAdmin(OSMGeoAdmin):
+    display = ('origination')
