@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.urls import path
-
-from . import views
+from django.conf.urls import url
+from main_app import views
 
 urlpatterns = [
     path("", views.landing, name="landing"),
@@ -12,4 +12,6 @@ urlpatterns = [
     path("shipment/", views.shipment, name="shipment"),
     path("create_shipment/", views.create_shipment, name="create_shipment"),
     path("profile/", views.profile, name="profile"),
+    url(r'^signup/$',views.signup, name='signup'),
+
 ]
