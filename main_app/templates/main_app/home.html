@@ -2,8 +2,6 @@
 {% block content %}
 
 <h1 class="heading">HOME</h1>
-<form method="GET">
-    <input id="landing-button" type="submit" value="New Shipment">
-</form>
+<button id="landing-button"><a href="{% url 'shipment' %}">New Shipment</a></button>
 
 {% endblock %}
