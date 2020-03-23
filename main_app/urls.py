@@ -9,6 +9,8 @@ urlpatterns = [
     path("show_signup/", views.show_signup, name="show_signup"),
     path("signup", views.signup, name="signup"),
     path("home/", views.home, name="home"),
+    path("shipment/", views.shipment, name="shipment"),
+    path("create_shipment/", views.create_shipment, name="create_shipment"),
     path("profile/", views.profile, name="profile"),
     path("package/<int:pkg_id", views.package_detail, name="package_detail")
 ]

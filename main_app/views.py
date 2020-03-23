@@ -16,6 +16,12 @@ def signup(request):
 def home(request):
     return render(request, 'main_app/home.html')
 
+def shipment(request):
+    return render(request, 'main_app/newshipment.html')
+
+def create_shipment(request):
+    print("made it")
+
 def profile(request):
     return render(request, 'main_app/profile.html')
 
