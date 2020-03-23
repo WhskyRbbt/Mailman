@@ -12,6 +12,6 @@ urlpatterns = [
     path("shipment/", views.shipment, name="shipment"),
     path("create_shipment/", views.create_shipment, name="create_shipment"),
     path("profile/", views.profile, name="profile"),
+    path("package/<int:pkg_id", views.package_detail, name="package_detail"),
     url(r'^signup/$',views.signup, name='signup'),
-
 ]
