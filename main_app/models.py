@@ -16,7 +16,7 @@ class User(models.Model):
     password = models.CharField(max_length=20)
 
     def __str__(self):
-        return self.first_name
+        return self.display_name
 
 class Package(models.Model):
     origination = models.CharField(max_length=100)
@@ -26,10 +26,10 @@ class Package(models.Model):
     height = models.IntegerField()
     weight = models.IntegerField()
     is_fragile = models.BooleanField()
-    destination_length = models.IntegerField()
-    cost_of_delivery = models.IntegerField()
-    completed = models.BooleanField(default=False)
-    users = models.ManyToManyField(User)
+    destination_length = models.IntegerField(blank=True, null=True)
+    cost_of_delivery = models.IntegerField(blank=True, null=True)
+    completed = models.BooleanField()
+    users = models.ManyToManyField(User, )
 
     def get_absolute_url(self):
         return reverse('detail', kwargs={'pkg_id': self.id})

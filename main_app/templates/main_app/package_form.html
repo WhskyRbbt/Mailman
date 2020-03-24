@@ -3,9 +3,9 @@
 <h1>Create Shipment</h1>
 <form method="POST" action="">
     {% csrf_token %}
-    <table>
-        {{ form.as_table }}
-    </table>
+    <div>
+        {{ form }}
+    </div>
     <input type="submit" value="Create">
 </form>
 

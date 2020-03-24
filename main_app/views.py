@@ -33,7 +33,7 @@ def home(request):
 
 class PackageCreate(CreateView):
     model = Package
-    fields = '__all__'
+    fields = ["origination", "destination", "length", "width", "height", "weight", "is_fragile"]
     success_url = '/profile/'
 
 def profile(request):
