@@ -8,7 +8,6 @@
     <title>Welcome to Mailman</title>
 </head>
 <body>
-    {% block content %}
     <div id="landing-div">
         <img id="landing-logo" src="../../static/images/logoredfull.png"></img>
         <form method="POST" action="{% url 'login' %}">
@@ -21,6 +20,5 @@
             <p>Not Registered? <input type="submit" value="sign-up"></p>
         </form>
     </div>
-    {% endblock %}
 </body>
 </html>

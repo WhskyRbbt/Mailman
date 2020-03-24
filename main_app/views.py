@@ -1,20 +1,14 @@
 from django.contrib.auth import authenticate
 from django.contrib.auth.forms import UserCreationForm
+from django.views.generic.edit import CreateView
 from django.shortcuts import render, redirect
 from django.shortcuts import render
+from .models import Package
 from .forms import SignUpForm
 
 
-
-# Landing route
-def landing(request):
-    return render(request, 'landing.html')
-
 def login(request):
     return render(request, '../templates/registration/login.html')
-
-# def registration(request):
-#     return render(request, 'registration/registration.html')
 
 def signup(request):
     if request.method == 'POST':
@@ -34,11 +28,10 @@ def signup(request):
 def home(request):
     return render(request, 'main_app/home.html')
 
-def shipment(request):
-    return render(request, 'main_app/newshipment.html')
-
-def create_shipment(request):
-    print("made it")
+class PackageCreate(CreateView):
+    model = Package
+    fields = "__all__"
+    success_url = "/detail/"
 
 def profile(request):
     return render(request, 'main_app/profile.html')
