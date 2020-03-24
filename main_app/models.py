@@ -19,8 +19,8 @@ class User(models.Model):
         return self.first_name
 
 class Package(models.Model):
-    origination = models.PointField()
-    destination = models.CharField(max_length=250)
+    origination = models.CharField(max_length=100)
+    destination = models.CharField(max_length=100)
     length = models.IntegerField()
     width = models.IntegerField()
     height = models.IntegerField()
