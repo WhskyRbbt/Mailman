@@ -19,11 +19,13 @@ class User(models.Model):
         return self.first_name
 
 class Package(models.Model):
-    dimensions = models.CharField(max_length=20)
+    origination = models.PointField()
+    destination = models.CharField(max_length=250)
+    length = models.IntegerField()
+    width = models.IntegerField()
+    height = models.IntegerField()
     weight = models.IntegerField()
     is_fragile = models.BooleanField()
-    origination = models.PointField() #CharField(max_length=100, default="00000 Blank Street 00000 CA")
-    destination = models.CharField(max_length=250)
     destination_length = models.IntegerField()
     cost_of_delivery = models.IntegerField()
     completed = models.BooleanField(default=False)
