@@ -1,4 +1,7 @@
 from django.contrib.auth import authenticate
+from django.contrib.auth.models import User
+from django.contrib.sessions.models import Session
+from django.utils import timezone
 from django.contrib.auth.forms import UserCreationForm
 from django.views.generic.edit import CreateView
 from django.shortcuts import render, redirect
@@ -30,8 +33,8 @@ def home(request):
 
 class PackageCreate(CreateView):
     model = Package
-    fields = "__all__"
-    success_url = "/detail/"
+    fields = '__all__'
+    success_url = '/profile/'
 
 def profile(request):
     return render(request, 'main_app/profile.html')
