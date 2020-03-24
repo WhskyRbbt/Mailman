@@ -11,5 +11,5 @@ urlpatterns = [
     path("package/", views.PackageCreate.as_view(), name="package"),
     path("profile/", views.profile, name="profile"),
     path("package/<int:pkg_id>/", views.package_detail, name="detail"),
-    url(r'^signup/$',views.signup, name='signup'),
+    path('signup/',views.signup, name='signup'),
 ]

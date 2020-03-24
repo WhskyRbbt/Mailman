@@ -245,3 +245,9 @@ ul {
     text-align: left;
     padding: .5rem;
 }
+
+#landing-button {
+    display: table-cell;
+    text-align: center;
+    vertical-align: bottom;
+}
