@@ -83,11 +83,12 @@ ul {
     border-top: 2px solid black;
 }
 
-/* PROFILE PAGE*/
-.profile-page {
+.page-container {
     margin: 0 auto;
     width: 800px;
 }
+
+/* PROFILE PAGE*/
 
 .profile-wrapper {
     display: flex;
