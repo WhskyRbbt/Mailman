@@ -227,3 +227,9 @@ ul {
 .shipment-input {
     display: inline;
 }
+
+#landing-button {
+    display: table-cell;
+    text-align: center;
+    vertical-align: bottom;
+}
