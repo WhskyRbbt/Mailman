@@ -227,3 +227,10 @@ ul {
 .shipment-input {
     display: inline;
 }
+
+
+/* Details Page */
+
+#mapid {
+    height: 180px;
+}
