@@ -234,3 +234,13 @@ ul {
 #mapid {
     height: 180px;
 }
+
+.detail-header {
+    text-align: right;
+    padding: .5rem;
+}
+
+.details-detail {
+    text-align: left;
+    padding: .5rem;
+}
