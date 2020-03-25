@@ -91,6 +91,7 @@ ul {
 
 .profile-wrapper {
     display: flex;
+    justify-content: center;
     padding: 0px 5rem;
 }
 
@@ -142,6 +143,8 @@ ul {
 #profile-un {
     margin-top: 0px;
     font-weight: 100;
+    display: flex;
+    justify-content: center;
 }
 
 .my-shipments {
@@ -228,8 +231,8 @@ ul {
     display: inline;
 }
 
-#landing-button {
-    display: table-cell;
+#newship {
+    display: table;
     text-align: center;
     vertical-align: bottom;
 }
