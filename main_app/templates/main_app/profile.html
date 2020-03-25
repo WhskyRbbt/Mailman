@@ -2,15 +2,19 @@
 {% block content %}
 
 <!-- profile header -->
-<h1 class="heading">PROFILE</h1>
+<h1 class="heading" id="profile-un">Welcome {{ user.username }}</h1>
 <div class="profile-page">
+    <p>package{{ package_details }}</p>
+
     <div class="profile-wrapper">
-        <div class="circle-container top">
+        <!-- <div class="circle-container top">
             HJ
-        </div>
+        </div> -->
         <div class="profile-info">
             <h2 id="profile-name">{{ user.first_name }}&nbsp;{{ user.last_name }}</h2>
-            <h3 id="profile-un">@{{ user.username }}</h3>
+            <h3 id="profile-email">{{ user.email }}</h3>
+            <h3 id="birthdate">D.o.B. - {{ user.birth_date }}</h3>
+            <h3 id="drivers-license">DL# - {{ user.drivers_license }}</h3>
         </div>
     </div>
     <hr class="hr-body"/>
@@ -20,7 +24,7 @@
     <div class="my-shipments">
         <div class="section-1">
             <h5 class="sec-1 st">SHIPPING TO</h5>
-            <h4 class="sec-1 un">USERNAME</h4> <!-- Shipping Name -->
+            <h4 class="sec-1 un">Shipper: {{ user.username }}</h4> <!-- Shipping Name -->
         </div>
         <div class="section-2">
             <div class="cities">
@@ -36,7 +40,7 @@
 
             <div class="dots">● &nbsp; ● &nbsp; ● &nbsp; ●</div>
                     <!-- distance -->
-            <div class="distance"> <h2>125 mi</h2> </div>
+            <div class="distance"> <h2>{{ package.distance }} mi</h2> </div>
 
             <div class="dots">● &nbsp; ● &nbsp; ● &nbsp; ●</div>
 
@@ -65,7 +69,6 @@
         <div class="my-shipments">
             <div class="section-1">
                 <h5 class="sec-1 st">SHIPPING FROM</h5>
-                <h4 class="sec-1 un">USERNAME</h4> <!-- Shipping Name -->
             </div>
             <div class="section-2">
                 <div class="cities">

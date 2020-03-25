@@ -14,6 +14,7 @@ class User(models.Model):
     display_name = models.CharField(max_length=15)
     email = models.CharField(max_length=75)
     password = models.CharField(max_length=20)
+    # birth_date = models.DateField(verbose_name="birth date")
 
     def __str__(self):
         return self.display_name
@@ -39,6 +40,7 @@ class Profile(models.Model):
     bio = models.TextField(max_length=500, blank=True)
     location = models.CharField(max_length=30, blank=True)
     birth_date = models.DateField(null=True, blank=True)
+    drivers_license = models.CharField(max_length=8, blank=True)
 
 @receiver(post_save, sender=User)
 def update_user_profile(sender, instance, created, **kwargs):
