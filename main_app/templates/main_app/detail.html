@@ -1,4 +1,76 @@
-{% extends 'base.html' %}
-{% block content %}
-<h1 class="heading">DELIVERY DETAIL</h1>
-{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="../../static/css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+        integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+        crossorigin=""></script>
+
+    <title>Mailman</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="nav-wrapper">
+                <ul>
+                    <li><a href="{% url 'home' %}" class="left" id="header-logo"><img
+                                src="../../static/images/logored.png" alt="Mailman Logo"></a></li>
+                </ul>
+                <ul class="nav right">
+                    <li><a href="{% url 'home' %}">HOME</a></li>
+                    <li><a href="{% url 'profile' %}">PROFILE</a></li>
+                    <li><a href="{% url 'login' %}">LOGOUT</a></li>
+                </ul>
+            </div>
+            <hr class="hr-header" />
+        </nav>
+    </header>
+    <main>
+
+        <h1 class="heading">DELIVERY DETAIL</h1>
+    <div class="page-container">
+
+        <div id="mapid">map</div>
+
+        <div id="details-container">
+            <table class="table detail">
+                <tr>
+                    <th class="detail-header">Package ID:</th>
+                    <td class="details-detail">{{ package.pkg_id }}</td>
+                </tr>
+                <tr>
+                    <th class="detail-header">Shipper:</th>
+                    <td class="details-detail">{{ user.username }}</td>
+                </tr>
+                <tr>
+                    <th class="detail-header">Origin:</th>
+                    <td class="details-detail">{{ package.origination_address }}</td>
+                </tr>
+                <tr>
+                    <th class="detail-header">Destination:</th>
+                    <td class="details-detail">{{ package.destinaton }}</td>
+                </tr>
+                <tr>
+                    <th class="detail-header">Distance:</th>
+                    <td class="details-detail">{{ package.distance }}</td>
+                </tr>
+            </table>
+        </div>
+        <div class="button-section">
+            <a class="package-button accept" href="">ACCEPT</a>
+            <a class="package-button cancel" href="">CANCEL</a>
+        </div>
+    </div>
+
+
+    </main>
+</body>
+
+</html>

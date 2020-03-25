@@ -83,11 +83,11 @@ ul {
     border-top: 2px solid black;
 }
 
-/* PROFILE PAGE*/
-.profile-page {
+.page-container {
     margin: 0 auto;
     width: 800px;
 }
+/* PROFILE PAGE*/
 
 .profile-wrapper {
     display: flex;
@@ -214,6 +214,7 @@ ul {
     border: 2px solid #8f3032;
     border-radius: 10px;
     padding: .2rem .8rem;
+    margin: 0 1rem;
 }
 
 .package-button.edit {
@@ -235,4 +236,36 @@ ul {
     display: table;
     text-align: center;
     vertical-align: bottom;
+}
+
+/* Detail Page */
+
+#details-container {
+    display: flex;
+    justify-content: center;
+}
+
+.table.detail {
+    /* border-collapse: separate; */
+    border-spacing: 15px;
+}
+
+.detail-header {
+    text-align: left;
+    padding: .5rem;
+}
+
+.details-detail {
+    text-align: left;
+    padding: .5rem;
+    width: 400px;
+}
+
+.button-section {
+    display: flex;
+    justify-content: center;
+}
+
+.package-button.accept {
+
 }
