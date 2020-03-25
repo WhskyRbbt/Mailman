@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< HEAD
+=======
+
+>>>>>>> b51bb74723ab7823935ef0692f8d0c6faf607b5c
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,13 +19,22 @@
     <title>Mailman</title>
 </head>
 
+<<<<<<< HEAD
 <body>
+=======
+<body>    
+>>>>>>> b51bb74723ab7823935ef0692f8d0c6faf607b5c
     <header>
         <nav>
             <div class="nav-wrapper">
                 <ul>
+<<<<<<< HEAD
                     <li><a href="{% url 'home' %}" class="left" id="header-logo"><img
                                 src="../../static/images/logored.png" alt="Mailman Logo"></a></li>
+=======
+                    <li><a href="{% url 'home' %}" class="left" id="header-logo"><img src="../../static/images/logored.png"
+                                alt="Mailman Logo"></a></li>
+>>>>>>> b51bb74723ab7823935ef0692f8d0c6faf607b5c
                 </ul>
                 <ul class="nav right">
                     <li><a href="{% url 'home' %}">HOME</a></li>
@@ -33,6 +46,7 @@
         </nav>
     </header>
     <main>
+<<<<<<< HEAD
 
         <h1 class="heading">DELIVERY DETAIL</h1>
     <div class="page-container">
@@ -73,4 +87,40 @@
     </main>
 </body>
 
+=======
+        <div class="page-container">
+            <h1 class="heading">DELIVERY DETAIL</h1>
+            {% block content %}
+            
+            <div id="mapid">map</div>
+            <div>
+                <table>
+                    <tr>
+                        <th class="detail-header">Package ID:</th>
+                        <td class="details-detail">{{ package.pkg_id }}</td>
+                    </tr>
+                    <tr>
+                        <th class="detail-header">Shipper:</th>
+                        <td class="details-detail">{{ user.username }}</td>
+                    </tr>
+                    <tr>
+                        <th class="detail-header">Origin:</th>
+                        <td class="details-detail">{{ package.origination_address }}</td>
+                    </tr>
+                    <tr>
+                        <th class="detail-header">Destination:</th>
+                        <td class="details-detail">{{ package.destinaton }}</td>
+                    </tr>
+                    <tr>
+                        <th class="detail-header">Distance:</th>
+                        <td class="details-detail">{{ package.distance }}</td>
+                    </tr>
+    
+                </table>
+            </div>
+            {% endblock %}
+        </div>
+    </main>
+</body>
+>>>>>>> b51bb74723ab7823935ef0692f8d0c6faf607b5c
 </html>
