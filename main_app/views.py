@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from django.contrib.sessions.models import Session
 from django.utils import timezone
 from django.contrib.auth.forms import UserCreationForm
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.shortcuts import render, redirect
 from django.shortcuts import render
 from .models import Package
@@ -36,8 +36,18 @@ class PackageCreate(CreateView):
     fields = ["origination", "destination", "length", "width", "height", "weight", "is_fragile"]
     success_url = '/profile/'
 
+class PackageUpdate(UpdateView):
+    model = Package
+    fields = ["length", "width", "height", "weight", "is_fragile"]
+    success_url = "/profile/"
+
+class PackageDelete(DeleteView):
+    model = Package
+    success_url = "/profile/"
+
 def profile(request):
-    return render(request, 'main_app/profile.html')
+    packages = Package.objects.all()
+    return render(request, 'main_app/profile.html', { "packages": packages })
 
 # @login_required
 def package_detail(request, pkg_id):
