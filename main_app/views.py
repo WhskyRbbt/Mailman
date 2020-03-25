@@ -27,14 +27,14 @@ def signup(request):
         form = SignUpForm()
     return render(request, 'registration/signup.html', {'form': form})
 
-
-def home(request):
-    return render(request, 'main_app/home.html')
-
 class PackageCreate(CreateView):
     model = Package
     fields = ["origination", "destination", "length", "width", "height", "weight", "is_fragile"]
     success_url = '/profile/'
+
+def home(request):
+    packages = Package.objects.all()
+    return render(request, 'main_app/home.html', { "packages": packages })
 
 class PackageUpdate(UpdateView):
     model = Package
@@ -51,5 +51,5 @@ def profile(request):
 
 # @login_required
 def package_detail(request, pkg_id):
-    package = Package.objects.get(id=pkg_id)
+    packages = Package.objects.get(id=pkg_id)
     return render(request, 'main_app/detail.html')
