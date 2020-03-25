@@ -234,10 +234,8 @@ ul {
     display: inline;
 }
 
-<<<<<<< HEAD
 #newship {
     display: table;
-=======
 
 /* Details Page */
 
@@ -257,7 +255,6 @@ ul {
 
 #landing-button {
     display: table-cell;
->>>>>>> b51bb74723ab7823935ef0692f8d0c6faf607b5c
     text-align: center;
     vertical-align: bottom;
 }
