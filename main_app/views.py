@@ -41,5 +41,5 @@ def profile(request):
 
 # @login_required
 def package_detail(request, pkg_id):
-    # package = Package.objects.get(id=pkg_id)
+    package = Package.objects.get(id=pkg_id)
     return render(request, 'main_app/detail.html')

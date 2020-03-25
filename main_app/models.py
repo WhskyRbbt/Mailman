@@ -30,6 +30,7 @@ class Profile(models.Model):
     birth_date = models.DateField(null=True, blank=True)
     deliveries = models.ForeignKey(Package, on_delete=models.CASCADE, blank=True, null=True)
 
+
 @receiver(post_save, sender=User)
 def update_user_profile(sender, instance, created, **kwargs):
     if created:
