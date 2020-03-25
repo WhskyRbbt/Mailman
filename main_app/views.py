@@ -31,12 +31,6 @@ def signup(request):
 def home(request):
     return render(request, 'main_app/home.html')
 
-def function(request, package_id=None):
-    object = package_detail.objects.get(id=package_id)
-    object.delete()
-    return render(request, '/home')
-
-
 class PackageCreate(CreateView):
     model = Package
     fields = ["origination", "destination", "length", "width", "height", "weight", "is_fragile"]
