@@ -1,37 +1,29 @@
 
+/* Main Components*/
+
 main {
     font-family: Helvetica, Arial, sans-serif;
 }
 
-#landing-div {
+.page-container {
+    margin: 0 auto;
+    width: 800px;
+}
+
+.flex-column-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    /* border: 2px solid purple; */
 }
 
-#landing-logo {
-    width: 46vw;
+.lato-text {
+    font-family: 'Lato', Arial, Helvetica, sans-serif;
 }
 
-#landing-button {
-    border-radius: 5px;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-    height: 2rem;
-    color: #8f3032;
-    font-size: 1.5rem;
-    border: 1px solid #8f3032;
-    box-shadow: 0px 0px 0px 0px #000000;
-}
-
-#landing-button a {
-    color: inherit;
-    text-decoration: none;
-}
-
-#login-form {
-    display: flex;
-    flex-direction: column;
+.button {
+    border: 2px solid #8f3032;
+    border-radius: 10px;
+    cursor: pointer;
 }
 
 input {
@@ -43,23 +35,21 @@ input {
     text-align: center;
 }
 
-.nav-wrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 2rem;
- 
-    margin: 0px;
-}
-
 a:link, a:visited {
     text-decoration: none;
     color: #8f3032;
 }
 
-/* .left {
-    border: 2px solid red;
-} */
+/* BASE HEADER */
+
+.nav-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2rem;
+
+    margin: 0px;
+}
 
 .right {
     display: flex;
@@ -83,11 +73,68 @@ ul {
     border-top: 2px solid black;
 }
 
-.page-container {
-    margin: 0 auto;
-    width: 800px;
+/* LOGIN PAGE */
+
+#landing-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-/* PROFILE PAGE*/
+
+#landing-logo {
+    width: 46vw;
+}
+
+.flex-column-container.login{
+    text-align: center;
+    font-family: 'Lato', Arial, Helvetica, sans-serif;
+}
+
+.button.landing{
+    color: #8f3032;
+    font-size: 1.5rem;
+    height: 3rem;
+    padding: 0px 1.5rem;
+    margin: 2rem;
+}
+
+#landing-button {
+    border-radius: 5px;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    height: 2rem;
+    color: #8f3032;
+    font-size: 1.5rem;
+    border: 1px solid #8f3032;
+    box-shadow: 0px 0px 0px 0px #000000;
+}
+
+#landing-button a {
+    color: inherit;
+    text-decoration: none;
+}
+
+#register-btn {
+    /* font-family: 'Lato', Arial, Helvetica, sans-serif; */
+    font-size: 16px;
+    color: blue;
+    border: none;
+    text-decoration: underline;
+    padding: .5rem;
+    height: 100%;
+    cursor: pointer;
+}
+
+/* SIGN-UP PAGE */
+
+#login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* HOME PAGE*/
+
+/* ADD PACKAGE */
 
 /* PROFILE PAGE*/
 
@@ -119,7 +166,6 @@ ul {
     border: 2.2px solid black;
     width: 40%;
     padding: .2rem;
-    /* margin-right: -2rem; */
 }
 
 .circle-container.body2 {
@@ -129,8 +175,8 @@ ul {
     border: 2.2px solid black;
     width: 40%;
     padding: .2rem;
-    /* margin-left: -2rem; */
 }
+
 .profile-info {
     color: #8f3032;
     display: flex;
@@ -225,12 +271,7 @@ ul {
     color: #8f3032;
 }
 
-.package-button {
-    border: 2px solid #8f3032;
-    border-radius: 10px;
-    padding: .2rem .8rem;
-    margin: 0 1rem;
-}
+
 
 .package-button.edit {
     align-self: center;
@@ -271,8 +312,6 @@ ul {
     text-align: center;
     vertical-align: bottom;
 }
-
-/* Detail Page */
 
 #details-container {
     display: flex;

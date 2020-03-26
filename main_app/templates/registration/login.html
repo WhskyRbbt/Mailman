@@ -4,27 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="../../static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
     <title>Welcome to Mailman</title>
 </head>
 <body>
     <div id="landing-div">
         <img id="landing-logo" src="../static/images/logoredfull.png"></img>
-        <form method="POST" action="{% url 'login' %}">
-            {% csrf_token %}
-            <p>
-                <label for="id_username">Username:</label>
-                <input type="text" name="username" autofocus="" autocapitalize="none" autocomplete="username" maxlength="150" required="" id="id_username">
-            </p>
-            <p>
-                <label for="id_password">Password:</label>
-                <input type="password" name="password" autocomplete="current-password" required="" id="id_password">
-            </p>
-            <input id="landing-button" type="submit" class="btn" value="log-in">
-            <input type="hidden" name="next" value="{{ next }}">
-        </form>
+        
+        <div class="flex-column-container login">
+            <form  method="POST" action="{% url 'login' %}">
+                {% csrf_token %}
+                <p>
+                    <label for="id_username">Username:</label>
+                    <input type="text" name="username" autofocus="" autocapitalize="none" autocomplete="username" maxlength="150" required="" id="id_username">
+                </p>
+                <p>
+                    <label for="id_password">Password:</label>
+                    <input type="password" name="password" autocomplete="current-password" required="" id="id_password">
+                </p>
+                <input type="submit" class="button landing" value="Log-in">
+                <input type="hidden" name="next" value="{{ next }}">
+            
+            </form>
+
+        </div>
         <form method="GET" action="{% url 'signup' %}">
-            <p>Not Registered? <input type="submit" value="sign-up"></p>
+            <p class="lato-text">Not Registered? <input id="register-btn" class="lato-text" type="submit" value="Sign-up"></p>
         </form>
     </div>
 </body>
