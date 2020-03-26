@@ -26,6 +26,7 @@ def signup(request):
         form = SignUpForm()
     return render(request, 'registration/signup.html', {'form': form})
 
+@login_required
 def package_create(request):
     if request.method == 'POST':
         user_id = request.POST["users"]
@@ -39,6 +40,7 @@ def package_create(request):
     else:
         return render(request, 'main_app/package_form.html')
 
+@login_required
 def home(request):
     packages = Package.objects.all()
     return render(request, 'main_app/home.html', { "packages": packages })
@@ -53,16 +55,11 @@ class PackageDelete(DeleteView):
     model = Package
     success_url = "/profile/"
 
+@login_required
 def profile(request):
     print(request.user)
     packages=Package.objects.filter(users__username = request.user)
     return render(request, 'main_app/profile.html', { "packages": packages, "user": request.user })
-
-# @login_required
-def package_detail(request, pkg_id):
-    packages = Package.objects.get(user = request.user)
-    return render(request, 'main_app/detail.html', { "packages": packages })
-
 
 @login_required
 def package_detail(request, pkg_id):
