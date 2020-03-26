@@ -1,6 +1,5 @@
 from django.contrib.auth import authenticate
 from django.contrib.auth.models import User
-# from django.contrib.auth import login
 from django.contrib.sessions.models import Session
 from django.utils import timezone
 from django.contrib.auth.forms import UserCreationForm
@@ -8,8 +7,7 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.shortcuts import render, redirect
 from django.shortcuts import render
 from .models import Package
-from .forms import SignUpForm
-
+from .forms import SignUpForm, PackageForm
 
 def login(request):
     return render(request, '../templates/registration/login.html')
@@ -28,10 +26,18 @@ def signup(request):
         form = SignUpForm()
     return render(request, 'registration/signup.html', {'form': form})
 
-class PackageCreate(CreateView):
-    model = Package
-    fields = ["origination", "destination", "length", "width", "height", "weight", "is_fragile"]
-    success_url = '/profile/'
+def package_create(request):
+    if request.method == 'POST':
+        user_id = request.POST["users"]
+        user = User.objects.get(id=user_id)
+        form = PackageForm(request.POST)
+        new_package = form.save(commit=False)
+        new_package.save()
+        package = Package.objects.get(id=new_package.id)
+        package.users.add(user)
+        return redirect('/profile/')
+    else:
+        return render(request, 'main_app/package_form.html')
 
 def home(request):
     packages = Package.objects.all()
@@ -41,6 +47,7 @@ class PackageUpdate(UpdateView):
     model = Package
     fields = ["length", "width", "height", "weight", "is_fragile"]
     success_url = "/profile/"
+
 
 class PackageDelete(DeleteView):
     model = Package
