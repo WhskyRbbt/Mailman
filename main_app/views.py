@@ -29,7 +29,7 @@ def signup(request):
 
 class PackageCreate(CreateView):
     model = Package
-    fields = ["origination", "destination", "length", "width", "height", "weight", "is_fragile"]
+    fields = ["origination", "destination", "length", "width", "height", "weight", "is_fragile", "users"]
     success_url = '/profile/'
 
 
@@ -39,9 +39,12 @@ def home(request):
 
 
 def profile(request):
-    return render(request, 'main_app/profile.html')
+    print(request.user)
+    packages=Package.objects.filter(users__username = request.user)
+    return render(request, 'main_app/profile.html', { "packages": packages, "user": request.user })
 
 # @login_required
 def package_detail(request, pkg_id):
-    packages = Package.objects.get(id=pkg_id)
-    return render(request, 'main_app/detail.html')
+    packages = Package.objects.get(user = request.user)
+    return render(request, 'main_app/detail.html', { "packages": packages })
+
