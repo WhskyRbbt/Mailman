@@ -48,12 +48,14 @@ class PackageUpdate(UpdateView):
     fields = ["length", "width", "height", "weight", "is_fragile"]
     success_url = "/profile/"
 
-
 class PackageDelete(DeleteView):
     model = Package
     success_url = "/profile/"
 
 def profile(request):
+    user_packages = Package.objects.get(users=request.user)
+    print("LOOK HERE V")
+    print(user_packages)
     packages = Package.objects.all()
     return render(request, 'main_app/profile.html', { "packages": packages })
 
