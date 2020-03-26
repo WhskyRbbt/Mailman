@@ -11,8 +11,8 @@
  <label for="id_height">Height:</label><input type="number" name="height" required="" id="id_height">
  <label for="id_weight">Weight:</label><input type="number" name="weight" required="" id="id_weight">
  <label for="id_is_fragile">Is fragile:</label><input type="checkbox" name="is_fragile" id="id_is_fragile">
- <label for="id_users">Users:</label><select name="users" required="" id="id_users" multiple="">
-   <option value="4" name="logged_user">{{ request.user }}</option>
+ <label for="id_users"></label><select name="users" required="" id="id_users" multiple="">
+   <option value="{{ request.user.id }}" name="logged_user">{{ request.user }}</option>
  
  </select>
      </div>
