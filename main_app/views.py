@@ -26,12 +26,6 @@ def signup(request):
         form = SignUpForm()
     return render(request, 'registration/signup.html', {'form': form})
 
-<<<<<<< HEAD
-class PackageCreate(CreateView):
-    model = Package
-    fields = ["origination", "destination", "length", "width", "height", "weight", "is_fragile", "users"]
-    success_url = '/profile/'
-=======
 def package_create(request):
     if request.method == 'POST':
         user_id = request.POST["users"]
@@ -44,7 +38,6 @@ def package_create(request):
         return redirect('/profile/')
     else:
         return render(request, 'main_app/package_form.html')
->>>>>>> master
 
 def home(request):
     packages = Package.objects.all()
@@ -61,18 +54,14 @@ class PackageDelete(DeleteView):
     success_url = "/profile/"
 
 def profile(request):
-    packages = Package.objects.all()
-    return render(request, 'main_app/profile.html', { "packages": packages })
+    print(request.user)
+    packages=Package.objects.filter(users__username = request.user)
+    return render(request, 'main_app/profile.html', { "packages": packages, "user": request.user })
 
 # @login_required
 def package_detail(request, pkg_id):
-<<<<<<< HEAD
     packages = Package.objects.get(user = request.user)
     return render(request, 'main_app/detail.html', { "packages": packages })
-
-=======
-    package = Package.objects.get(id=pkg_id)
-    return render(request, 'main_app/detail.html', { "package": package })
 
 # @login_required
 def assoc_driver(request, pkg_id):
@@ -87,4 +76,3 @@ def unassoc_driver(request, pkg_id):
     return redirect('package_detail', pkg_id=pkg_id)
     packages = Package.objects.get(id=pkg_id)
     return render(request, 'main_app/detail.html')
->>>>>>> master

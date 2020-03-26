@@ -4,7 +4,7 @@
 <!-- profile header -->
 <h1 class="heading" id="profile-un">Welcome {{ user.username }}</h1>
 <div class="page-container">
-    <p>package{{ package_details }}</p>
+    <p>package</p>
 
 <div class="profile-page">
     <div class="profile-wrapper">
@@ -20,10 +20,10 @@
     <!-- my shipments block -->
     <h2 class="heading">MY SHIPMENTS</h2>
     <div id="avail_del">
-        <h2>Packages for Deliver</h2>
+        <h2>Packages for Delivery</h2>
 
         {% for p in packages %}
-        {{ p.users.all }}
+        {{ p.users.all }} SNOOCHIE
             <div class="my-shipments">
             <div class="section-1">
                 <h5 class="sec-1 st">SHIPPING FROM</h5>
@@ -44,14 +44,13 @@
                 <div class="dots">● &nbsp; ● &nbsp; ● &nbsp; ●</div>
                         <!-- distance -->
                         
-                <div class="distance"> 
-                    {% if p.destination_length > 0 %}
-                    <h2>{{ p.destination_length }} mi</h2> 
-                    {% else %}
-                    <h2>N/A</h2>
-                    {% endif %}
-                </div>
-    
+                        <div class="distance"> 
+                            {% if p.destination_length > 0 %}
+                            <h2>{{ p.destination_length }} mi</h2> 
+                            {% else %}
+                            <h2>N/A</h2>
+                            {% endif %}
+                        </div>    
     
                 <div class="dots">● &nbsp; ● &nbsp; ● &nbsp; ●</div>
     
