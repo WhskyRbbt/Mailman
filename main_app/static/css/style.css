@@ -171,12 +171,25 @@ ul {
     align-content: center;
     width: 115px;
 }
+.section-4 {
+    flex-grow: 1;
+    text-align: center;
+}
 
 .sec-1.st {
     text-decoration: underline;
 }
 
 .sec-1.un {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.sec-4.st {
+    text-decoration: underline;
+}
+
+.sec-4.un {
     font-size: 18px;
     font-weight: 400;
 }

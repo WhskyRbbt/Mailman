@@ -11,9 +11,65 @@
 </div>
 <hr>
 <div id="avail_del">
-    <h2>Packages to Deliver</h2>
-    <p>No Packages at this time</p>
+    <h2>Packages for Deliver</h2>
+    {% for package in packages %}
 
+    {% if package in packages %}
+    <div class="my-shipments">
+        <div class="section-1">
+            <h5 class="sec-1 st">SHIPPING FROM</h5>
+            <h4 class="sec-1 un">{{ package.origination }}</h4>
+        </div>
+        <div class="section-2">
+            <div class="cities">
+                <div class="circle-container body1">
+                    <!-- city first letter -->
+                    A
+                </div>
+                <div class="city">
+                    <!-- city -->
+                    POINT A
+                </div>
+            </div>
+
+            <div class="dots">● &nbsp; ● &nbsp; ● &nbsp; ●</div>
+                    <!-- distance -->
+                    
+            <div class="distance"> 
+                {% if package.destination_length > 0 %}
+                <h2>{{ package.destination_length }} mi</h2> 
+                {% else %}
+                <h2>N/A</h2>
+                {% endif %}
+            </div>
+
+
+            <div class="dots">● &nbsp; ● &nbsp; ● &nbsp; ●</div>
+
+            <div class="cities">
+                <div class="circle-container body2">
+                    <!-- city first letter -->
+                    B
+                </div>
+                <div class="city">
+                    <!-- city -->
+                    POINT B
+                </div>
+            </div>
+        </div>
+        <div class="section-4">
+            <h5 class="sec-4 st">DELIVER TO</h5>
+            <h4 class="sec-4 un">{{ package.destination }}</h4>
+        </div>
+        <div class="section-3">
+            <a class="package-button edit" href="">DETAILS</a>
+            <a class="package-button delete" href="">ACCEPT</a>
+        </div>
+        {% else %}
+        <h4>There are no deliveries available.</h4>
+    </div>
+    {% endif %}
+    {% endfor %}
     <!-- pull info for created shipments -->
 </div>
 
