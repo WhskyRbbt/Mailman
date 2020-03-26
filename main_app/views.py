@@ -54,13 +54,14 @@ class PackageDelete(DeleteView):
     success_url = "/profile/"
 
 def profile(request):
-    packages = Package.objects.all()
-    return render(request, 'main_app/profile.html', { "packages": packages })
+    print(request.user)
+    packages=Package.objects.filter(users__username = request.user)
+    return render(request, 'main_app/profile.html', { "packages": packages, "user": request.user })
 
 # @login_required
 def package_detail(request, pkg_id):
-    package = Package.objects.get(id=pkg_id)
-    return render(request, 'main_app/detail.html', { "package": package })
+    packages = Package.objects.get(user = request.user)
+    return render(request, 'main_app/detail.html', { "packages": packages })
 
 # @login_required
 def assoc_driver(request, pkg_id):
