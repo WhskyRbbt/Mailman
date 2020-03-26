@@ -67,7 +67,7 @@ class PackageDelete(DeleteView):
 @login_required
 def profile(request):
     print(request.user)
-    packages=Package.objects.filter(users__username = request.user)
+    packages = Package.objects.filter(users__username = request.user)
     return render(request, 'main_app/profile.html', { "packages": packages, "user": request.user })
 
 @login_required
