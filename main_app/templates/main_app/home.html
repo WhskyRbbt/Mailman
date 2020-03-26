@@ -62,7 +62,7 @@
             <h4 class="sec-4 un">{{ package.destination }}</h4>
         </div>
         <div class="section-3">
-            <a class="package-button edit" href="">DETAILS</a>
+            <a class="package-button edit" href="{% url 'detail' package.id %}">DETAILS</a>
             <a class="package-button delete" href="">ACCEPT</a>
         </div>
         {% else %}
