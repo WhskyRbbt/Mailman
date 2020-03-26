@@ -1,5 +1,6 @@
 from django.contrib.auth import authenticate
 from django.contrib.auth.models import User
+# from django.contrib.auth import login
 from django.contrib.sessions.models import Session
 from django.utils import timezone
 from django.contrib.auth.forms import UserCreationForm
@@ -43,3 +44,15 @@ def profile(request):
 def package_detail(request, pkg_id):
     package = Package.objects.get(id=pkg_id)
     return render(request, 'main_app/detail.html')
+
+# @login_required
+def assoc_driver(request, pkg_id):
+    user = request.user
+    Package.objects.get(id=pkg_id).user.add(user.id)
+    return redirect('package_detail', pkg_id=pkg_id)
+
+# @login_required
+def unassoc_driver(request, pkg_id):
+    user = request.user
+    Package.objects.get(id=pkg_id).user.remove(user.id)
+    return redirect('package_detail', pkg_id=pkg_id)
