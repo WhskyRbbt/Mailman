@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.contrib.sessions.models import Session
 from django.utils import timezone
+from django.utils.decorators import method_decorator
 from django.contrib.auth.forms import UserCreationForm
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.shortcuts import render, redirect
@@ -45,20 +46,28 @@ def home(request):
     packages = Package.objects.all()
     return render(request, 'main_app/home.html', { "packages": packages })
 
+
 class PackageUpdate(UpdateView):
     model = Package
     fields = ["length", "width", "height", "weight", "is_fragile"]
     success_url = "/profile/"
 
+    @method_decorator(login_required)
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
 
 class PackageDelete(DeleteView):
     model = Package
     success_url = "/profile/"
 
+    @method_decorator(login_required)
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
+
 @login_required
 def profile(request):
     print(request.user)
-    packages=Package.objects.filter(users__username = request.user)
+    packages = Package.objects.filter(users__username = request.user)
     return render(request, 'main_app/profile.html', { "packages": packages, "user": request.user })
 
 @login_required
