@@ -14,6 +14,5 @@ urlpatterns = [
     path("profile/", views.profile, name="profile"),
     path("package/<int:pkg_id>/", views.package_detail, name="detail"),
     path('signup/',views.signup, name='signup'),
-    path("package/<int:pkg_id/assoc_driver/", views.assoc_driver, name='assoc_driver'),
-    path("package/<int:pkg_id/unassoc_driver/", views.unassoc_driver, name='unassoc_driver'),
+    path("package/<int:pkg_id>/assoc_driver/<int:user_id>/", views.assoc_driver, name='assoc_driver'),
 ]
