@@ -2,84 +2,84 @@
 {% block content %}
 
 <h1 class="heading">Welcome: {{ user.get_username }}</h1>
-<div id="user_info">
-    <h2>Profile</h2>
-    <p>Name: {{ user.first_name }} {{ user.last_name }}</p>
-    <p>email: {{ user.email }}</p>
-
-    <!-- profile info and current rating -->
-</div>
-<hr>
-<div id="avail_del">
-    <h2>Packages for Delivery</h2>
-    {% for package in packages %}
+<div class="page-container home">
+    <div id="user-info">
+        <h2>Profile</h2>
+        <p class="user-info name">Name:<span class="user-info-cont">{{ user.first_name }} {{ user.last_name }}</span></p>
+        <p>E-mail: <span style="margin-left: 1rem; font-size: larger;">{{ user.email }}</span></p>
     
-
-    {% if package in packages %}
-    <div class="shipments">
-        <div class="section-1">
-            <h5 class="sec-1 st">SHIPPING FROM</h5>
-            <h4 class="sec-1 un">{{ package.origination }}</h4>
-        </div>
-        <div class="section-2">
-            <div class="cities">
-                <div class="circle-container body1">
-                    <!-- city first letter -->
-                    A
-                </div>
-                <div class="city">
-                    <!-- city -->
-                    POINT A
-                </div>
-            </div>
-
-            <div class="dots">● &nbsp; ● &nbsp; ● &nbsp; ●</div>
-                    <!-- distance -->
-                    
-            <div class="distance"> 
-                {% if package.destination_length > 0 %}
-                <h2>{{ package.destination_length }} mi</h2> 
-                {% else %}
-                <h2>N/A</h2>
-                {% endif %}
-            </div>
-
-
-            <div class="dots">● &nbsp; ● &nbsp; ● &nbsp; ●</div>
-
-            <div class="cities">
-                <div class="circle-container body2">
-                    <!-- city first letter -->
-                    B
-                </div>
-                <div class="city">
-                    <!-- city -->
-                    POINT B
-                </div>
-            </div>
-        </div>
-        <div class="section-4">
-            <h5 class="sec-4 st">DELIVER TO</h5>
-            <h4 class="sec-4 un">{{ package.destination }}</h4>
-        </div>
-        <div class="section-3">
-            <a class="package-button edit" href="{% url 'detail' package.id %}">DETAILS</a>
-            <a class="package-button delete" href="">ACCEPT</a>
-        </div>
-        {% else %}
-        <h4>There are no deliveries available.</h4>
+        <!-- profile info and current rating -->
     </div>
-    {% endif %}
-    {% endfor %}
-    <!-- pull info for created shipments -->
-</div>
+    <div id="avail-del">
+        <hr>
+        <h2 class="heading">Packages for Delivery</h2>
+        {% for package in packages %}
+    
+        {% if package in packages %}
+        <div class="flex-column-container">
+            <div class="shipments">
+                <div class="section-1">
+                    <h5 class="sec-1 st">SHIPPING FROM</h5>
+                    <h4 class="sec-1 un">{{ package.origination }}</h4>
+                </div>
+                <div class="section-2">
+                    <div class="cities">
+                        <div class="circle-container body1">
+                            <!-- city first letter -->
+                           <span>A</span> 
+                        </div>
+                        <div class="city">
+                            <!-- city -->
+                            POINT A
+                        </div>
+                    </div>
+        
+                    <div class="dots">● &nbsp; ● &nbsp; ● &nbsp; ●</div>
+                            <!-- distance -->
+                            
+                    <div class="distance"> 
+                        {% if package.destination_length > 0 %}
+                        <h2>{{ package.destination_length }} mi</h2> 
+                        {% else %}
+                        <h2>N/A</h2>
+                        {% endif %}
+                    </div>
+        
+        
+                    <div class="dots">● &nbsp; ● &nbsp; ● &nbsp; ●</div>
+        
+                    <div class="cities">
+                        <div class="circle-container body2">
+                            <!-- city first letter -->
+                           <span>B</span>
+                        </div>
+                        <div class="city">
+                            <!-- city -->
+                            POINT B
+                        </div>
+                    </div>
+                </div>
+                <div class="section-4">
+                    <h5 class="sec-4 st">DELIVER TO</h5>
+                    <h4 class="sec-4 un">{{ package.destination }}</h4>
+                </div>
+                <div class="section-3">
+                    <a class="button small" href="{% url 'detail' package.id %}">DETAILS</a>
+                    <a class="button small" href="">ACCEPT</a>
+                </div>
 
-<div id="local_map">
-    <!-- create local map -->
-</div>
-
-<div id="newship">
-<button id="landing-button"><a href="{% url 'package' %}">New Shipment</a></button>
+            </div>
+            {% else %}
+            <h4>There are no deliveries available.</h4>
+            {% endif %}
+            {% endfor %}
+            <!-- pull info for created shipments -->
+        </div>
+    </div>
+    
+    <div id="newship">
+        <button class="button home"><a href="{% url 'package' %}">New Shipment</a></button>
+    </div>
 </div>
 
 {% endblock %}
