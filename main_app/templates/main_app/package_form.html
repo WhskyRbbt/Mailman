@@ -1,22 +1,30 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>Shipment Info</h1>
+<h1 class="heading">Shipment Info</h1>
 <form method="POST" action="">
     {% csrf_token %}
-     <div>
-         <label for="id_origination">Origination:</label><input type="text" name="origination" maxlength="100" required="" id="id_origination">
- <label for="id_destination">Destination:</label><input type="text" name="destination" maxlength="100" required="" id="id_destination">
- <label for="id_length">Length:</label><input type="number" name="length" required="" id="id_length">
- <label for="id_width">Width:</label><input type="number" name="width" required="" id="id_width">
- <label for="id_height">Height:</label><input type="number" name="height" required="" id="id_height">
- <label for="id_weight">Weight:</label><input type="number" name="weight" required="" id="id_weight">
- <label for="id_is_fragile">Is fragile:</label><input type="checkbox" name="is_fragile" id="id_is_fragile">
- <label for="id_users">Users:</label><select name="users" required="" id="id_users" multiple="">
-   <option value="4" name="logged_user">{{ request.user }}</option>
- 
- </select>
-     </div>
-     <input type="submit" value="Create">
- </form>
+    <div class="page-container">
+        <div class="flex-column-container pkg-form">
+            <label for="id_origination">Origination:</label><input type="text" name="origination" maxlength="100"
+                required="" id="id_origination">
+            <label for="id_destination">Destination:</label><input type="text" name="destination" maxlength="100"
+                required="" id="id_destination">
+            <label for="id_length">Length:</label><input type="number" name="length" required="" id="id-length">
+            <label for="id_width">Width:</label><input type="number" name="width" required="" id="id-width">
+            <label for="id_height">Height:</label><input type="number" name="height" required="" id="id-height">
+            <label for="id_weight">Weight:</label><input type="number" name="weight" required="" id="id-weight">
+            <label for="id_is_fragile">Is fragile:</label><input type="checkbox" name="is-fragile" id="id-is-fragile">
+            <label for="id_users"></label><select name="users" required="" id="id-users" multiple="">
+                <option id="opt-user"value="{{ request.user.id }}" name="logged_user">{{ request.user }}</option>
+
+            </select>
+
+        </div>
+        <div id="btn-pkg-container">
+            <input class="button landing pkg" type="submit" value="Create">
+        </div>
+    </div>
+</form>
+
 
 {% endblock %}

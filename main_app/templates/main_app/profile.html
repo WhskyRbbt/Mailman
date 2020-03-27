@@ -23,7 +23,7 @@
         <h2>Packages for Delivery</h2>
 
         {% for p in packages %}
-            <div class="my-shipments">
+        <div class="shipments">
             <div class="section-1">
                 <h5 class="sec-1 st">SHIPPING FROM</h5>
                 <h4 class="sec-1 un">{{ p.origination }}</h4>
@@ -69,8 +69,8 @@
                 <h4 class="sec-4 un">{{ p.destination }}</h4>
             </div>
             <div class="section-3">
-                <a class="package-button edit" href="">DETAILS</a>
-                <a class="package-button delete" href="">ACCEPT</a>
+                <a class="package-button edit" href="{% url 'package_update' p.id %}">Edit</a>
+                <a class="package-button delete" href="{% url 'package_delete' p.id %}">CANCEL</a>
             </div>
         </div>
         {% endfor %}
