@@ -143,15 +143,14 @@ ul {
     margin-left: 1rem;
     font-family: 'Raleway';
 }
-/* #user-info > span {
-    font-weight: 200;
-    font-size: 14px;
-} */
 
 #newship {
     text-align: center;
     width: 100%;
-    margin-bottom: 0;
+    margin-bottom: 4px;
+    position: sticky;
+    bottom: 0;
+
 }
 
 .button.home {
@@ -163,6 +162,19 @@ ul {
 }
 
 /* ADD PACKAGE */
+
+.flex-column-container.pkg-form {
+    
+}
+
+#btn-pkg-container {
+    text-align: center;
+}
+
+#opt-user {
+    font-size: 18px;
+}
+
 
 /* PROFILE PAGE*/
 
@@ -234,6 +246,9 @@ span {
 .section-1 {
     flex-grow: 1;
     text-align: center;
+    justify-content: start;
+    width: 200px;
+    margin-left: -8rem;
 }
 
 .section-2 {
@@ -265,7 +280,7 @@ span {
 
 .sec-1.un {
     font-size: 18px;
-    font-weight: 400;
+    font-weight: 600;
 }
 
 .sec-4.st {
@@ -274,7 +289,7 @@ span {
 
 .sec-4.un {
     font-size: 18px;
-    font-weight: 400;
+    font-weight: 600;
 }
 
 .cities {
@@ -306,6 +321,8 @@ span {
     font-size: 12px;
     margin: .2rem;
     color: #8f3032;
+    width: 4rem;
+    text-align: center;
 }
 
 .button.small {
@@ -323,8 +340,8 @@ span {
     display: inline;
 }
 
-#newship {
-    display: table;
+/* #newship {
+    display: table; */
 
     /* Details Page */
 
